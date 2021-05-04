@@ -1,0 +1,30 @@
+{
+  "name": "vaccineslotavailabillity",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samritabakshi/vaccineSlotAvailabillity.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "cron": "^1.8.2",
+    "dotenv": "^8.2.0",
+    "moment": "^2.29.1",
+    "node-cron": "^3.0.0",
+    "pm2": "^4.5.6"
+  },
+  "devDependencies": {
+    "nodemailer": "^6.6.0"
+  },
+  "bugs": {
+    "url": "https://github.com/samritabakshi/vaccineSlotAvailabillity/issues"
+  },
+  "homepage": "https://github.com/samritabakshi/vaccineSlotAvailabillity#readme"
+}
