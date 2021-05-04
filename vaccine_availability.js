@@ -20,7 +20,7 @@ const AGE = process.env.AGE
 
 async function main(){
     try {
-        cron.schedule('* * * * *', async () => {
+        cron.schedule('*/15 * * * *', async () => {
              await checkAvailability();
         });
     } catch (e) {
@@ -54,6 +54,7 @@ function getSlotsForDate() {
                     "sessions" : []
                 }
                 let temp = sessions.filter(slot => slot.min_age_limit == 18 &&  slot.available_capacity > 2)
+                // console.log(temp)
                 validSlots.sessions = temp
                 console.log(validSlots)
                 if (validSlots.sessions.length > 0){
