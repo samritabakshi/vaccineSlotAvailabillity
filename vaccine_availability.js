@@ -37,7 +37,7 @@ async function checkAvailability() {
 function getSlotsForDate() {
     let config = {
         method: 'get',
-        url: 'https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByDistrict?district_id=294&date='+moment().format('DD-MM-YYYY'),
+        url: 'https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByDistrict?district_id=294&date='+ moment().utcOffset("+05:30").format('DD-MM-YYYY'),
         // url: 'https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByPin?pincode=' + PINCODE + '&date=' + DATE,
         headers: {
             'accept': 'application/json',
