@@ -20,7 +20,7 @@ const AGE = process.env.AGE
 
 async function main(){
     try {
-        cron.schedule('*/2 * * * *', async () => {
+        cron.schedule('* * * * *', async () => {
              await checkAvailability();
         });
     } catch (e) {
