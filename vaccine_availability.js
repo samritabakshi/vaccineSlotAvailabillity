@@ -20,7 +20,7 @@ const AGE = process.env.AGE
 
 async function main(){
     try {
-        cron.schedule('*/15 * * * *', async () => {
+        cron.schedule('*/2 * * * *', async () => {
              await checkAvailability();
         });
     } catch (e) {
@@ -39,10 +39,11 @@ function getSlotsForDate() {
         method: 'get',
         url: 'https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByDistrict?district_id=294&date='+ moment().utcOffset("+05:30").format('DD-MM-YYYY'),
         // url: 'https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByPin?pincode=' + PINCODE + '&date=' + DATE,
-        headers: {
-            'accept': 'application/json',
-            'Accept-Language': 'hi_IN'
-        }
+        // headers: {
+        //     'accept': 'application/json',
+        //     'Accept-Language': 'hi_IN'
+        // }
+        headers: {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'}
     };
     let total_valid_slots =[]
     axios(config)
@@ -54,7 +55,7 @@ function getSlotsForDate() {
                     "sessions" : []
                 }
                 let temp = sessions.filter(slot => slot.min_age_limit == 18 &&  slot.available_capacity > 2)
-                // console.log(temp)
+                console.log(temp)
                 validSlots.sessions = temp
                 console.log(validSlots)
                 if (validSlots.sessions.length > 0){

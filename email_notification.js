@@ -14,8 +14,8 @@ let nodemailerTransporter = nodemailer.createTransport({
 
 exports.sendEmail = function (email, subjectLine, slotDetails, callback) {
     let options = {
-        from: String('Vaccine Checker ' + process.env.EMAIL),
-        to: [email,"shreyans.sharma1992@gmail.com"],
+        from: String('Vaccine Checker ' + process.env.EMAIL_USERNAME),
+        to: [process.env.EMAIL_USERNAME,"shreyans.sharma1992@gmail.com"],
         subject: subjectLine,
         text: 'Vaccine available. Details: \n\n' + slotDetails
     };
